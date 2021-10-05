@@ -27,3 +27,12 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+
+# I/O table - Class/Methods
+
+|      input      |     output     |
+| :-------------: | :------------: |
+| Deposit of 1000 | balance + 1000 |
+|      nouns      |     verbs      |
+|      :---:      |     :---:      |
+|      Bank       |   deposit()    |
