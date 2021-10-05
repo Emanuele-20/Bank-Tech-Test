@@ -27,4 +27,11 @@ describe("Bank Tech Test", () => {
 			bank.withdrawal(3500);
 		}).toThrow("You have not enough funds");
 	});
+	fit("Implement the functionality to get a statement", () => {
+		bank.deposit(1000, "10/01/2023");
+		console.log(bank.transactionTracker);
+		expect(bank.getStatement()).toBe(
+			`date || credit || debit || balance\n 10/01/2023 || 1000 || || 1000`
+		);
+	});
 });
