@@ -20,4 +20,11 @@ describe("Bank Tech Test", () => {
 		bank.withdrawal(500);
 		expect(bank.balance).toBe(2500);
 	});
+	it("Implements the possibility to not withdrawal more money than the amount present in your account", () => {
+		bank.deposit(1000);
+		bank.deposit(2000);
+		expect(() => {
+			bank.withdrawal(3500);
+		}).toThrow("You have not enough funds");
+	});
 });

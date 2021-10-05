@@ -7,7 +7,11 @@ class Bank {
 		this.balance = this.balance + amount;
 	}
 	withdrawal(amount) {
-		this.balance = this.balance - amount;
+		if (this.balance - amount < 0) {
+			throw new Error("You have not enough funds");
+		} else {
+			this.balance = this.balance - amount;
+		}
 	}
 }
 module.exports = Bank;
