@@ -29,6 +29,7 @@ describe("Bank Tech Test", () => {
 	});
 	fit("Implement the functionality to get a statement", () => {
 		bank.deposit(1000, "10/01/2023");
+		console.log(bank.headStatement);
 		console.log(bank.transactionTracker);
 		expect(bank.getStatement()).toBe(
 			`date || credit || debit || balance\n 10/01/2023 || 1000 || || 1000`

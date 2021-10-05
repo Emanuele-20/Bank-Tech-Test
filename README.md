@@ -30,9 +30,14 @@ date || credit || debit || balance
 
 # I/O table - Class/Methods
 
-|      input      |     output     |
-| :-------------: | :------------: |
-| Deposit of 1000 | balance + 1000 |
-|      nouns      |     verbs      |
-|      :---:      |     :---:      |
-|      Bank       |   deposit()    |
+|       input       |     output     |
+| :---------------: | :------------: |
+|  Deposit of 1000  | balance + 1000 |
+| Withdrawal of 500 |  balance 500   |
+|     Statement     |      500       |
+
+| nouns |     verbs      |
+| :---: | :------------: |
+| Bank  |   deposit()    |
+| Bank  |  withdrawal()  |
+| Bank  | getStatement() |
