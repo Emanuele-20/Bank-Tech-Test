@@ -16,7 +16,7 @@ class Bank {
 		}
 	}
 	getStatement() {
-		return `${this.headStatement}\n ${this.transactionTracker}`;
+		return `${this.headStatement}\n${this.transactionTracker}`;
 	}
 }
 module.exports = Bank;
