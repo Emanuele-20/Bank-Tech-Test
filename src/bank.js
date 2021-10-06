@@ -16,7 +16,9 @@ class Bank {
 		}
 	}
 	getStatement() {
-		return `${this.headStatement}\n${this.transactionTracker}`;
+		return `${this.headStatement}\n${this.transactionTracker
+			.reverse()
+			.join("\n")}`;
 	}
 }
 module.exports = Bank;
