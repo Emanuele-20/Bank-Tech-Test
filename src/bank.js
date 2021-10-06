@@ -6,7 +6,9 @@ class Bank {
 	}
 	deposit(amount, date) {
 		this.balance = this.balance + amount;
-		this.transactionTracker.push(`${date} || ${amount} || || ${this.balance}`);
+		this.transactionTracker.push(
+			`${date} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}`
+		);
 	}
 	withdrawal(amount, date) {
 		if (this.balance - amount < 0) {
@@ -14,7 +16,7 @@ class Bank {
 		} else {
 			this.balance = this.balance - amount;
 			this.transactionTracker.push(
-				`${date} || || ${amount} || ${this.balance}`
+				`${date} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}`
 			);
 		}
 	}

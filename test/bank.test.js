@@ -29,10 +29,8 @@ describe("Bank Tech Test", () => {
 	});
 	it("Implement the functionality to get a statement", () => {
 		bank.deposit(1000, "10/01/2023");
-		// console.log(`${bank.headStatement}\n${bank.transactionTracker}`);
-		// console.log(bank.transactionTracker.join());
 		expect(bank.getStatement()).toBe(
-			`date || credit || debit || balance\n10/01/2023 || 1000 || || 1000`
+			`date || credit || debit || balance\n10/01/2023 || 1000.00 || || 1000.00`
 		);
 	});
 });
@@ -43,7 +41,7 @@ describe("Feature, using the bank account", () => {
 		bank.deposit(2000, "13/01/2023");
 		expect(bank.balance).toBe(3000);
 		expect(bank.getStatement()).toBe(
-			`${`date || credit || debit || balance`}\n${"13/01/2023 || 2000 || || 3000"}\n${"10/01/2023 || 1000 || || 1000"}`
+			`${`date || credit || debit || balance`}\n${"13/01/2023 || 2000.00 || || 3000.00"}\n${"10/01/2023 || 1000.00 || || 1000.00"}`
 		);
 	});
 	it("Return the statement in the correct format, after 3 different transtactions", () => {
@@ -52,7 +50,7 @@ describe("Feature, using the bank account", () => {
 		bank.withdrawal(500, "14/01/2023");
 		expect(bank.balance).toBe(2500);
 		expect(bank.getStatement()).toBe(
-			`${`date || credit || debit || balance`}\n${"14/01/2023 || || 500 || 2500"}\n${"13/01/2023 || 2000 || || 3000"}\n${"10/01/2023 || 1000 || || 1000"}`
+			`${`date || credit || debit || balance`}\n${"14/01/2023 || || 500.00 || 2500.00"}\n${"13/01/2023 || 2000.00 || || 3000.00"}\n${"10/01/2023 || 1000.00 || || 1000.00"}`
 		);
 	});
 });
