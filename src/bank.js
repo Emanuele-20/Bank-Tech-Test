@@ -8,11 +8,14 @@ class Bank {
 		this.balance = this.balance + amount;
 		this.transactionTracker.push(`${date} || ${amount} || || ${this.balance}`);
 	}
-	withdrawal(amount) {
+	withdrawal(amount, date) {
 		if (this.balance - amount < 0) {
 			throw new Error("You have not enough funds");
 		} else {
 			this.balance = this.balance - amount;
+			this.transactionTracker.push(
+				`${date} || || ${amount} || ${this.balance}`
+			);
 		}
 	}
 	getStatement() {

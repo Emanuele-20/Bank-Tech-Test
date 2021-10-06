@@ -46,4 +46,13 @@ describe("Feature, using the bank account", () => {
 			`${`date || credit || debit || balance`}\n${"13/01/2023 || 2000 || || 3000"}\n${"10/01/2023 || 1000 || || 1000"}`
 		);
 	});
+	it("Return the statement in the correct format, after 3 different transtactions", () => {
+		bank.deposit(1000, "10/01/2023");
+		bank.deposit(2000, "13/01/2023");
+		bank.withdrawal(500, "14/01/2023");
+		expect(bank.balance).toBe(2500);
+		expect(bank.getStatement()).toBe(
+			`${`date || credit || debit || balance`}\n${"14/01/2023 || || 500 || 2500"}\n${"13/01/2023 || 2000 || || 3000"}\n${"10/01/2023 || 1000 || || 1000"}`
+		);
+	});
 });
